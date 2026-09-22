@@ -19,7 +19,7 @@ Aucune dépendance ni compilation n'est nécessaire.
 
 ### Ouvrir directement le fichier
 
-Ouvrez [index.html](index.html) dans un navigateur récent.
+Ouvrez [maximemb1.github.io/snake/](Snake) dans un navigateur récent.
 
 
 ## Jouer
