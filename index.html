@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/style.css">
+        <link rel="shortcut icon" href="style/logo_snake.png" type="image/x-icon">
+        <title>Snake</title>
+    </head>
+
+    <body>
+
+        <div id="message" class="message"></div>
+
+        <section class="parametre" id="section_parametre">
+
+        </section>
+
+        <section id="menu">
+            <button class="btn_colle" onclick="afficher_parametre()">⚙️</button>
+            <h1>Snake</h1>
+            <h3 id="h3_menu">Joue avec les fleches !</h3>
+            <button onclick="switch_ecran('jeu'), jouer('normal')">Normal</button>
+            <button onclick="switch_ecran('jeu'), jouer('infini')">Infini</button>
+            <button onclick="switch_ecran('jeu'), jouer('hard')">Hard</button>
+            <button class="btn_separe" onclick="switch_ecran('shop')">Magasin</button>
+
+          <!--  <a href="http://localhost/plateforme-jeux/"> <button class="btn_separe2">Retour à la plateforme</button> </a> -->
+        
+        </section>
+
+        <section id="game_play">
+            <button class="btn_colle" onclick="switch_ecran('menu')">Menu</button>
+            <button id="btn_pause" onclick="etat_jeu.pause=true">⏸️</button>
+
+            <div id="game_conteneur">
+                <div id="stats">
+                    <p id="score"></p>
+                    <p id="pomme"></p>
+                    <p id="long"></p>
+                </div>
+
+                <canvas id="cvs" width="600" height="500"></canvas>
+            </div>
+            <!-- bouton pour mobile -->
+             <section id="fleche_mobile">
+                <button onclick="deplacement_mobile('gauche', parametre.inversion_controles)">◀️</button>
+                <button onclick="deplacement_mobile('haut', parametre.inversion_controles)">🔼</button>
+                <button onclick="deplacement_mobile('droite', parametre.inversion_controles)">▶️</button>
+                <button onclick="deplacement_mobile('bas', parametre.inversion_controles)">🔽</button>
+             </section>
+        </section>
+
+        <section class="overlay" id="overlay">
+            <div class="div_overlay" id="game_over">
+                <h2>Game Over</h2>
+                <p id="p_game_over"></p>
+                <button class="btn_overlay" onclick="jouer(mode_act.nom)">Rejouer</button>
+                <button class="btn_overlay3" onclick="switch_ecran('menu')">Menu</button>
+                <button class="btn_overlay2" onclick="switch_ecran('shop')">Magasin</button>
+            </div>
+
+            <div class="div_overlay" id="win">
+                <h2>Victoire !</h2>
+                <p id="p_win">Pommes mangées: ...</p>
+                <button class="btn_overlay" onclick="jouer(mode_act.nom)">Rejouer</button>
+                <button class="btn_overlay3" onclick="switch_ecran('menu')">Menu</button>
+                <button class="btn_overlay2" onclick="switch_ecran('shop')">Magasin</button>
+            </div>
+
+            <div class="div_overlay" id="pause">
+                <h2>Pause</h2>
+                <button class="btn_colle" onclick="afficher_parametre()">⚙️</button>
+                <button class="btn_overlay" onclick="reprendre()">Continuer</button>
+                <button class="btn_overlay3" onclick="switch_ecran('menu')">Menu</button>
+                <button class="btn_overlay2" onclick="switch_ecran('shop')">Magasin</button>
+                
+            </div>
+        </section>
+        
+        <section id="shop">
+            <button class="btn_colle" onclick="switch_ecran('menu')">Menu</button>
+            <button id="btn_coninuer" onclick="switch_ecran('jeu'), reprendre()">Reprendre</button>
+            <h1>Bienvenue dans le magasin !</h1>
+            <br><br>
+            <div class="or">
+                <h4 id="or_shop"></h4>
+            </div>
+            <div id="conteneur_shop">
+
+            </div>
+            
+        </section>
+
+        <script src="js/variable.js"></script>
+        <script src="js/shop.js"></script>
+        <script src="js/succes.js"></script>
+        <script src="js/interface.js"></script>
+        <script src="js/Snake.js"></script>
+        <script src="js/Pommes.js"></script>
+        <script src="js/input.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
