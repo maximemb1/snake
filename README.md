@@ -17,12 +17,9 @@ Jeu de Snake développé en JavaScript vanilla et jouable dans un navigateur. Le
 
 Aucune dépendance ni compilation n'est nécessaire.
 
-### Ouvrir directement le fichier
+##  Jouer
 
-Ouvrez [Snake](maximemb1.github.io/snake/) dans un navigateur récent.
-
-
-## Jouer
+👉 [Jouer à Snake](https://maximemb1.github.io/snake/)
 
 ### Clavier
 
