@@ -1,4 +1,5 @@
 charger_sauvegarde();
+effectuer_changement();
 
 function main(){
     if (!etat_jeu.running) return;
