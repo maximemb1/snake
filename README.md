@@ -56,7 +56,7 @@ Pour réinitialiser la progression, supprimez les données de stockage local du 
 │   ├── interface.js    # Menus, paramètres et affichage
 │   ├── shop.js         # Magasin et skins
 │   ├── variable.js     # État global, canvas et sauvegarde
-│   └── succes.js       # Prévu pour les succès
+│   └── succes.js       # Gestion des succès
 └── style/
 	└── style.css       # Mise en forme
 ```
