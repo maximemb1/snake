@@ -289,7 +289,7 @@ canvas{
     position: absolute;
     top: 0;
     left: 0;
-    width: 91%;
+    width: 83%;
     height: 100%;
 
     background: var(--panel-2_transparent);
