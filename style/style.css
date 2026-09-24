@@ -527,3 +527,10 @@ canvas{
     bottom: 0;
     transform: translateX(-50%);
 }
+
+/**** hauteur sur petit écran ****/
+@media (max-width<500px){
+    body{
+        height : 90vh;
+    }
+}
