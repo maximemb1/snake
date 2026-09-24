@@ -1,10 +1,7 @@
 const cvs = document.getElementById("cvs");
 const ctx = cvs.getContext("2d");
 
-const box = 24;
-if (window.innerWidth < 500){
-    box = 20;
-}
+const box = window.innerWidth > 500 ? 24 : 20;
 
 cvs.width = box*25;
 cvs.height = box*20;
