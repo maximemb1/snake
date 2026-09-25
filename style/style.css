@@ -531,6 +531,6 @@ canvas{
 /**** hauteur sur petit écran ****/
 @media (max-width<500px){
     body{
-        height : 90vh;
+        height : 80vh;
     }
 }
