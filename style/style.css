@@ -25,7 +25,7 @@ body{
     letter-spacing: 1.25px;
     color: var(--text);
     background: var(--bg);
-    height: 100vh;
+    height: 95vh;
     overscroll-behavior: none;
 }
 
@@ -89,6 +89,8 @@ canvas{
 #menu{
     background: var(--panel-transparent);
     height: 90%;
+    width: 90%;
+    border-radius: 4px;
 }
 #menu button:hover{
     box-shadow: 0 0 30px var(--accent-3);
@@ -110,11 +112,14 @@ canvas{
 #game_play{
     display: none;
 
-    height: 100%;
+    height: 90%;
     max-height: 100vh;
     min-height: 250px;
-/* 
-    overflow: hidden; */
+    width: 90%;
+
+    border-radius: 6px;
+    transform: translateX(-0.2%);
+
 }
 #game_conteneur{
     position: relative;
@@ -145,6 +150,7 @@ canvas{
 /* *** Shop *** */
 #shop{
     display: none;
+    margin: 1.2rem 0.5rem;
 }
 #conteneur_shop{
     display: flex;
@@ -289,8 +295,8 @@ canvas{
     position: absolute;
     top: 0;
     left: 0;
-    width: 83%;
-    height: 100%;
+    width: 91%;
+    height: 90%;
 
     background: var(--panel-2_transparent);
 }
@@ -503,7 +509,12 @@ canvas{
     height: 50px;
     padding: 0;
 }
-
+@media (max-width:300px) {
+    #fleche_mobile{
+        width: 125px;
+        height: 75px;
+    }
+}
 #fleche_mobile button:nth-child(1) {
     left: 0;
     top: 50%;
@@ -528,9 +539,10 @@ canvas{
     transform: translateX(-50%);
 }
 
-/**** hauteur sur petit écran ****/
-@media (max-width<500px){
+
+/* *** Responsive hauteur/largeur ecran *** */
+@media (max-width:500px) {
     body{
-        height : 50vh;
+        height: 90vh;
     }
 }
