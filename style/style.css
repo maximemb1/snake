@@ -89,8 +89,10 @@ canvas{
 #menu{
     background: var(--panel-transparent);
     height: 90%;
-    width: 90%;
+    width: 85%;
     border-radius: 4px;
+    transform: translateX(6%);
+    /* transform: translateX(2.5%); */
 }
 #menu button:hover{
     box-shadow: 0 0 30px var(--accent-3);
@@ -544,5 +546,14 @@ canvas{
 @media (max-width:500px) {
     body{
         height: 90vh;
+    }
+    #menu{
+        width: 85%;
+    }
+    #game_play{
+        width: 85%;
+    }
+    #overlay{
+        width: 86%;
     }
 }
