@@ -549,6 +549,7 @@ canvas{
     }
     #menu{
         width: 80%;
+        transform: translateX(0);
     }
     #game_play{
         width: 80%;
