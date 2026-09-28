@@ -6,7 +6,7 @@ const larg_tige = 3;
 const haut_tige = 7.5;
 const larg_ellipse = 5;
 const haut_ellipse = 2.5;
-const gains = {"normal":{"pts": 1, "or": 1, "queue": 1, "long_queue":1}, "doree": {"pts": 5, "or": 3, "queue": 2, "long_queue":2}, "dark": {"pts": -2, "or": -1, "queue": 2, "long_queue": -2}};
+const gains = {"normal":{"pts": 1, "or": 1, "queue": 1, "long_queue":1}, "doree": {"pts": 5, "or": 3, "queue": 2, "long_queue":2}, "dark": {"pts": -2, "or": -1, "queue": 1, "long_queue": -1}};
 let multi = 1;
 
 class Pomme {
