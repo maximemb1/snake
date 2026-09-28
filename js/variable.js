@@ -8,9 +8,9 @@ cvs.height = box*20;
 
 const etat_jeu = {running: false, pause: false, win: false, game_over: false};
 
-const mode_dispo = {normal: {nom: "normal", nbr_pomme: 5, pourcentage_noir: 0.09, pourcentage_doree: 0.9, vitesse: 2},
-            infini: {nom: "infini", nbr_pomme: 20, pourcentage_noir: 0.08, pourcentage_doree: 0.85, vitesse: 2},
-            hard: {nom: "hard", nbr_pomme: 2, pourcentage_noir: 0.1, pourcentage_doree: 0.91, vitesse: 4}};
+const mode_dispo = {normal: {nom: "normal", nbr_pomme: 8, pourcentage_noir: 0.08, pourcentage_doree: 0.9, vitesse: 2},
+            infini: {nom: "infini", nbr_pomme: 24, pourcentage_noir: 0.072, pourcentage_doree: 0.85, vitesse: 2},
+            hard: {nom: "hard", nbr_pomme: 4, pourcentage_noir: 0.09, pourcentage_doree: 0.91, vitesse: 4}};
 
 let mode_act = "";
 
