@@ -31,9 +31,9 @@ Sur un écran tactile, les boutons directionnels peuvent être activés dans les
 
 | Mode | Pommes au départ | Vitesse |
 | --- | ---: | ---: |
-| Normal | 5 | 2 |
-| Infini | 20 | 2 |
-| Hard | 2 | 4 |
+| Normal | 12 | 2 |
+| Infini | 30 | 2 |
+| Hard | 6 | 4 |
 
 Les pommes normales rapportent des points et agrandissent le serpent. Les pommes dorées rapportent davantage, tandis que les pommes noires retirent des points, de l'or et de la longueur.
 
