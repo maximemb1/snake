@@ -102,28 +102,55 @@ cvs.addEventListener("touchend", (e) => {
         return;
     }
 
-    // Swipe horizontal
-    if (Math.abs(dx) > Math.abs(dy)) {
+    if (parametre.inversion_controles){
+        // Swipe horizontal
+        if (Math.abs(dx) > Math.abs(dy)) {
 
-        if (dx > 0 && snake.direction !== "gauche") {
-            snake.prochaine_direction = "droite";
+            if (dx > 0 && snake.direction !== "droite") {
+                snake.prochaine_direction = "gauche";
+            }
+
+            else if (dx < 0 && snake.direction !== "gauche") {
+                snake.prochaine_direction = "droite";
+            }
         }
 
-        else if (dx < 0 && snake.direction !== "droite") {
-            snake.prochaine_direction = "gauche";
+        // Swipe vertical
+        else {
+
+            if (dy > 0 && snake.direction !== "bas") {
+                snake.prochaine_direction = "haut";
+            }
+
+            else if (dy < 0 && snake.direction !== "haut") {
+                snake.prochaine_direction = "bas";
+            }
         }
     }
+    else{
+        // Swipe horizontal
+        if (Math.abs(dx) > Math.abs(dy)) {
 
-    // Swipe vertical
-    else {
+            if (dx > 0 && snake.direction !== "gauche") {
+                snake.prochaine_direction = "droite";
+            }
 
-        if (dy > 0 && snake.direction !== "haut") {
-            snake.prochaine_direction = "bas";
+            else if (dx < 0 && snake.direction !== "droite") {
+                snake.prochaine_direction = "gauche";
+            }
         }
 
-        else if (dy < 0 && snake.direction !== "bas") {
-            snake.prochaine_direction = "haut";
+        // Swipe vertical
+        else {
+
+            if (dy > 0 && snake.direction !== "haut") {
+                snake.prochaine_direction = "bas";
+            }
+
+            else if (dy < 0 && snake.direction !== "bas") {
+                snake.prochaine_direction = "haut";
+            }
         }
     }
-
+    
 }, {passive: true});
