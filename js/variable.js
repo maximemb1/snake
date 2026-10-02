@@ -1,16 +1,17 @@
 const cvs = document.getElementById("cvs");
 const ctx = cvs.getContext("2d");
 
-const box = window.innerWidth > 500 ? 24 : 20;
+const box = window.innerWidth > 500 ? 24 : 20;
+
 
 cvs.width = box*25;
 cvs.height = box*20;
 
 const etat_jeu = {running: false, pause: false, win: false, game_over: false};
 
-const mode_dispo = {normal: {nom: "normal", nbr_pomme: 8, pourcentage_noir: 0.08, pourcentage_doree: 0.9, vitesse: 2},
-            infini: {nom: "infini", nbr_pomme: 24, pourcentage_noir: 0.072, pourcentage_doree: 0.85, vitesse: 2},
-            hard: {nom: "hard", nbr_pomme: 4, pourcentage_noir: 0.09, pourcentage_doree: 0.91, vitesse: 4}};
+const mode_dispo = {normal: {nom: "normal", nbr_pomme: 12, pourcentage_noir: 0.08, pourcentage_doree: 0.9, vitesse: 2},
+            infini: {nom: "infini", nbr_pomme: 30, pourcentage_noir: 0.072, pourcentage_doree: 0.85, vitesse: 2},
+            hard: {nom: "hard", nbr_pomme: 6, pourcentage_noir: 0.09, pourcentage_doree: 0.91, vitesse: 4}};
 
 let mode_act = "";
 
