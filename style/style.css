@@ -92,7 +92,6 @@ canvas{
     width: 85%;
     border-radius: 4px;
     transform: translateX(6%);
-    /* transform: translateX(2.5%); */
 }
 #menu button:hover{
     box-shadow: 0 0 30px var(--accent-3);
@@ -120,7 +119,7 @@ canvas{
     width: 90%;
 
     border-radius: 6px;
-    transform: translateX(-0.2%);
+    transform: translateX(6%);
 
 }
 #game_conteneur{
@@ -553,8 +552,10 @@ canvas{
     }
     #game_play{
         width: 80%;
+        transform: translateX(0);
     }
     #overlay{
         width: 81%;
+        transform: translateX(0);
     }
 }
