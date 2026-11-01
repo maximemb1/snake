@@ -83,7 +83,7 @@ let touch_start_y = 0;
 
 const seuil_swipe = 5;
 
-cvs.addEventListener("touchstart", (e) => {
+window.addEventListener("touchstart", (e) => {
     const touch = e.touches[0];
 
     touch_start_x = touch.clientX;
@@ -91,7 +91,7 @@ cvs.addEventListener("touchstart", (e) => {
 }, {passive: true});
 
 
-cvs.addEventListener("touchend", (e) => {
+window.addEventListener("touchend", (e) => {
     const touch = e.changedTouches[0];
 
     const dx = touch.clientX - touch_start_x;
@@ -154,3 +154,11 @@ cvs.addEventListener("touchend", (e) => {
     }
     
 }, {passive: true});
+
+// *** Empèche reload de la page ***
+window.addEventListener("touchmove", (e) => {
+    // Si le jeu est actif, on empêche le navigateur de scroller ou de rafraîchir la page
+    if (etat_jeu.running) {
+        e.preventDefault(); 
+    }
+}, { passive: false });
