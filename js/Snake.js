@@ -289,9 +289,10 @@ class Joueur{
         this.or_cette_game = 0;
         this.pts = 0;
         this.longueur = 0;
+        this.pommes_mangees_cette_game = 0
         this.skin = {Corps: [{id:"base", color:"rgb(34, 197, 94)"}], Yeux: [{id:"base", color:"rgb(34, 197, 94)"}], Dents: [{id:"base", color:"rgb(200, 255, 230)"}], Effet: [{id: "aucun", color:"rgb(255, 255, 255)", forme: ""}]};
         this.skin_equipe = {Corps: {id:"base", color:"rgb(34, 197, 94)"}, Yeux: {id:"base", color:"rgb(34, 197, 94)"}, Dents: {id:"base", color:"rgb(200, 255, 230)"}, Effet: {id: "aucun", color: "rgb(255, 255, 255)", forme: ""}};
-        this.stats = {longueur_max: 0, pommes_mangees: 0, score_ttl : 0, or_ttl: 0, meilleur_score: 0}; // ** pour plateforme et stats**
+        this.stats = {longueur_max: 0, pommes_mangees: 0, score_ttl : 0, or_ttl: 0, meilleur_score: 0, partie_jouees: 0}; // ** pour plateforme et stats**
     }
 
     gagner_or(or){
@@ -307,20 +308,21 @@ class Joueur{
 
     incremente_longueur(long){
         this.longueur += long; 
-    }
-
-    verifier_record_longueur(){
-        if (this.longueur > this.stats.longueur_max) this.stats.longueur_max = this.longueur;
+        this.stats.longueur_max += long;
     }
 
     gagner_pommes(){
-        this.stats.pommes_mangees ++;
+        this.stats.pommes_mangees += 1;
+        this.pommes_mangees_cette_game += 1;
     }
 
     nouv_meilleur_score(){
         this.stats.meilleur_score = this.stats.meilleur_score < this.pts ? this.pts: this.stats.meilleur_score;
     }
 
+    aug_parties(){
+        this.stats.partie_jouees += 1;
+    }
 }
 
 function draw_forme(forme, x, y, taille){
