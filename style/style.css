@@ -89,12 +89,16 @@ canvas{
 #menu{
     background: var(--panel-transparent);
     height: 90%;
-    width: 85%;
-    border-radius: 4px;
-    transform: translateX(6%);
 }
 #menu button:hover{
     box-shadow: 0 0 30px var(--accent-3);
+}
+#menu > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
 }
 .btn_separe{
     margin: .5rem 0 0 0;
@@ -116,11 +120,8 @@ canvas{
     height: 90%;
     max-height: 100vh;
     min-height: 250px;
-    width: 90%;
-
-    border-radius: 6px;
-    transform: translateX(3%);
-
+/* 
+    overflow: hidden; */
 }
 #game_conteneur{
     position: relative;
@@ -151,7 +152,6 @@ canvas{
 /* *** Shop *** */
 #shop{
     display: none;
-    margin: 1.2rem 0.5rem;
 }
 #conteneur_shop{
     display: flex;
@@ -293,23 +293,50 @@ canvas{
 #overlay{
     margin: 0;
     display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 91%;
-    height: 90%;
-
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    box-sizing: border-box;
+    padding: clamp(.75rem, 3vw, 2rem);
     background: var(--panel-2_transparent);
+    backdrop-filter: blur(3px);
+    overflow: hidden;
 }
 .div_overlay{
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    gap: clamp(.35rem, 1.5vh, 1rem);
+    width: min(88vw, 620px);
+    max-height: calc(200dvh - 2rem);
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: clamp(.75rem, 3vw, 2rem);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--panel);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    text-align: center;
 }
 .div_overlay .visible{
     display: flex;
+}
+.div_overlay h2,
+.div_overlay p{
+    max-width: 100%;
+    margin: 1rem;
+}
+.div_overlay h2{
+    line-height: 1.1;
+}
+
+.div_overlay button:not(.btn_colle_p){
+    flex-shrink: 0;
+    max-width: min(260px, 100%);
 }
 .btn_overlay{
     border-radius: 2rem 2rem 0 0;
@@ -320,9 +347,33 @@ canvas{
     box-shadow: inset 0 0 8px var(--accent-2);
 }
 .btn_overlay3{
-    margin: 0.5rem;
+    margin: clamp(.15rem, 1vh, .5rem);
     padding: .4rem;
     box-shadow: inset 0 0 8px var(--accent-2);
+}
+.btn_colle_p {
+    width: 50%;
+    max-width: 100px;
+}
+
+@media (max-width:500px), (max-height:500px){
+    #overlay{
+        padding: .5rem;
+    }
+    .div_overlay{
+        width: min(94vw, 420px);
+        max-height: calc(100dvh - 1rem);
+        gap: .35rem;
+        padding: .75rem;
+        border-radius: 8px;
+    }
+    .div_overlay button{
+        max-width: 220px;
+        padding: .35rem .65rem;
+    }
+    .btn_overlay3{
+        margin: .15rem;
+    }
 }
 
 /* ** Messages dynamiques ** */
@@ -486,7 +537,7 @@ canvas{
 
     background: var(--panel);
 
-    z-index: 5;
+    z-index: 500;
 
     transform: translateX(-50%);
 
@@ -545,17 +596,5 @@ canvas{
 @media (max-width:500px) {
     body{
         height: 90vh;
-    }
-    #menu{
-        width: 80%;
-        transform: translateX(0);
-    }
-    #game_play{
-        width: 80%;
-        transform: translateX(0);
-    }
-    #overlay{
-        width: 81%;
-        transform: translateX(0);
     }
 }
