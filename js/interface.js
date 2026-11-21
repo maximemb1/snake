@@ -3,7 +3,7 @@ function afficher_score(){
 }
 
 function afficher_pomme(){
-    p_pomme.textContent = `Pommes: ${joueur.stats.pommes_mangees}`;
+    p_pomme.textContent = `Pommes: ${joueur.pommes_mangees_cette_game}`;
 }
 
 function afficher_longueur(){
