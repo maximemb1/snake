@@ -1,17 +1,19 @@
 const cvs = document.getElementById("cvs");
 const ctx = cvs.getContext("2d");
 
-const box = window.innerWidth > 500 ? 24 : 20;
-
+let box = 24;
+if (window.innerWidth < 500){
+    box = 20;
+}
 
 cvs.width = box*25;
 cvs.height = box*20;
 
 const etat_jeu = {running: false, pause: false, win: false, game_over: false};
 
-const mode_dispo = {normal: {nom: "normal", nbr_pomme: 12, pourcentage_noir: 0.08, pourcentage_doree: 0.9, vitesse: 2},
-            infini: {nom: "infini", nbr_pomme: 30, pourcentage_noir: 0.072, pourcentage_doree: 0.85, vitesse: 2},
-            hard: {nom: "hard", nbr_pomme: 6, pourcentage_noir: 0.09, pourcentage_doree: 0.91, vitesse: 4}};
+const mode_dispo = {normal: {nom: "normal", nbr_pomme: 5, pourcentage_noir: 0.09, pourcentage_doree: 0.9, vitesse: 2},
+            infini: {nom: "infini", nbr_pomme: 20, pourcentage_noir: 0.08, pourcentage_doree: 0.85, vitesse: 2},
+            hard: {nom: "hard", nbr_pomme: 2, pourcentage_noir: 0.1, pourcentage_doree: 0.91, vitesse: 4}};
 
 let mode_act = "";
 
@@ -69,7 +71,7 @@ function sauvegarder(){
         skin_equipe : joueur.skin_equipe,
         stats : joueur.stats,
         inversion_controles: parametre.inversion_controles,
-        touche_mobile: parametre.touche_sur_mobile
+        touche_mobile: parametre.touche_sur_mobile 
     } ;
     localStorage.setItem("save_snake", JSON.stringify(data));
 }
@@ -80,43 +82,15 @@ function charger_sauvegarde(){
         joueur.or = data.or;
         joueur.skin = data.skins;
         joueur.skin_equipe = data.skin_equipe;
-        joueur.stats = data.stats;
+        joueur.stats = {
+            longueur_max: Number(data.stats?.longueur_max) || 0,
+            pommes_mangees: Number(data.stats?.pommes_mangees) || 0,
+            score_ttl: Number(data.stats?.score_ttl) || 0,
+            or_ttl: Number(data.stats?.or_ttl) || 0,
+            meilleur_score: Number(data.stats?.meilleur_score) || 0,
+            partie_jouees: Number(data.stats?.partie_jouees) || 0
+        };
         parametre.inversion_controles = data.inversion_controles;
         parametre.touche_sur_mobile = data.touche_mobile;
     }
 }
-
-// *** Gestion php pour plateforme jeux ***
-/* function envoyer_donnees_snake_php(){
-    fetch("../../api/enregistrer_snake.php",{
-        method: "POST",
-        headers:{ "Content-Type": "application/json"},
-        body: JSON.stringify({
-            score: joueur.pts || 0,
-            pommes_mangees: joueur.stats.pommes_mangees  || 0,
-            longueur_ttl: joueur.longueur || 0,
-            or: joueur.or_cette_game || 0
-        })
-    })
-    .then(reponse => {
-        console.log("2 - réponse reçue :", reponse.status);
-        return reponse.text();
-    })
-    .then(data => {
-        console.log("3 - réponse PHP :", data);
-    })
-    .catch(erreur => {
-        console.error("ERREUR FETCH :", erreur);
-    });
-}
-function envoyer_stats_global_php(){
-    fetch("../../api/enregistrer_global.php",{
-        method: "POST",
-        headers:{ "Content-Type": "application/json"},
-        body: JSON.stringify({
-            score: joueur.pts,
-            dernier_jeu: 'snake'
-        })
-    })
-} */
-
