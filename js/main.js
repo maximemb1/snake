@@ -1,5 +1,4 @@
 charger_sauvegarde();
-effectuer_changement();
 
 function main(){
     if (!etat_jeu.running) return;
@@ -34,7 +33,7 @@ function jouer(mode, premiere_fois=true){
     snake.speed = mode_act.vitesse;
 
     if (premiere_fois){
-        
+        joueur.aug_parties();
         renisialisation();
 
         for (let i=0; i < mode_act.nbr_pomme; i++){
@@ -56,7 +55,7 @@ function renisialisation(){
     snake.queue.push(new Queue(snake.x-box, snake.y));
     joueur.pts = 0;
     joueur.longueur = 0;
-    joueur.stats.pommes_mangees = 0;
+    joueur.pommes_mangees_cette_game = 0;
 
     switch_ecran('jeu');
     afficher_overlay("aucun");
@@ -76,4 +75,3 @@ function reprendre() {
     jouer(mode_act.nom, false);
 
 }
-
